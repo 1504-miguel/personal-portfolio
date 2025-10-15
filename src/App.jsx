@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
+
 function App() {
   useEffect(() => {
     const backToTopButton = document.getElementById("backToTop");
@@ -44,7 +45,7 @@ function App() {
           </div>
           <div className="hero-image">
             <img
-              src="/public/profile.png"
+              src="https://i.postimg.cc/Sqg3w3r7/Gemini-Generated-Image-masdqxmasdqxmasd.png"
               alt="Profile"
             />
           </div>
@@ -80,7 +81,7 @@ function App() {
         <div className="container">
           <h3 className="section-title">Skills</h3>
           <div className="skills-grid">
-            {[ 
+            {[
               { name: "Manual Testing", level: "40%" },
               { name: "Test Case Creation", level: "40%" },
               { name: "Adaptability and Flexibility", level: "60%" },
@@ -134,7 +135,14 @@ function App() {
           </div>
 
           <div className="resume-download">
-            <a href="/public/resume.pdf" className="btn" download>📄 Download Resume</a>
+            <a
+              href="https://drive.google.com/uc?export=download&id=1a-UbXOm2FoLQthVCvaLhhRABarU_UOk1"
+              className="btn"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              📄 Download Resume
+            </a>
           </div>
         </div>
       </section>
