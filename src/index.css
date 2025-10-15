@@ -15,6 +15,9 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 .container {
@@ -33,7 +36,6 @@ body {
   margin-bottom: 0.5rem;
   font-weight: 700;
   position: relative;
-  display: block;
 }
 
 .section-title::after {
@@ -82,6 +84,8 @@ body {
 .nav ul {
   display: flex;
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav li {
@@ -113,12 +117,13 @@ body {
 
 /* ================== Hero ================== */
 .hero {
-  height: 85vh;
+  min-height: 85vh;
   background: var(--accent-gradient);
   color: #fff;
   display: flex;
   align-items: center;
   text-align: left;
+  padding: 4rem 0;
 }
 
 .hero-content {
@@ -131,7 +136,7 @@ body {
 
 .hero-text {
   flex: 1;
-  min-width: 400px;
+  min-width: 280px;
 }
 
 .hero-text h2 {
@@ -142,7 +147,7 @@ body {
 }
 
 .hero-text p {
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 300;
   max-width: 600px;
   opacity: 0.9;
@@ -173,55 +178,78 @@ body {
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
 }
 
-/* ================== About & Biography ================== */
-.about .container {
-  max-width: 900px;
-}
-
+/* ================== Biography ================== */
 .biography {
-  text-align: center;
-}
-
-.biography .bio-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 4rem 1.5rem;
+  background: var(--background);
+  width: 100%;
+  box-sizing: border-box;
+}
 
+.biography .bio-container {
   background: var(--card);
   padding: 2.5rem;
-  border-radius: 15px;
+  border-radius: 20px;
   box-shadow: var(--shadow);
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 850px;
+  width: 100%;
+  margin: 0 auto; /* ✅ ensures it stays centered */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .biography h3.section-title {
+  font-size: 2rem;
+  color: var(--text);
   margin: 0;
+  position: relative;
 }
 
 .biography h3.section-title::after {
-  margin: 10px auto 30px;
+  content: "";
+  display: block;
+  width: 60px;
+  height: 4px;
+  background-color: var(--accent);
+  margin: 12px auto 30px;
+  border-radius: 3px;
 }
 
 .bio-list {
   list-style: none;
   padding: 0;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 1.2rem;
 }
 
 .bio-list li {
-  width: 100%;
-  max-width: 500px;
-  padding: 1rem;
+  background: rgba(255, 255, 255, 0.04);
   border-bottom: 1px solid #3e4c5a;
+  width: 100%;
+  max-width: 600px;
+  padding: 1rem;
+  border-radius: 8px;
   font-size: 1.05rem;
+  line-height: 1.5;
+  color: var(--text);
+  transition: background 0.3s ease;
   text-align: center;
+}
+
+.bio-list li:hover {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .bio-list li strong {
@@ -233,9 +261,8 @@ body {
 /* ================== Skills ================== */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
 .skill {
@@ -258,10 +285,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.skill-header span:first-child {
-  color: var(--accent);
-}
-
 .bar {
   background: #3e4c5a;
   height: 8px;
@@ -280,24 +303,9 @@ body {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
-  margin-top: 2rem;
-}
-
-.resume-column h4 {
-  font-size: 1.5rem;
-  color: var(--accent);
-  margin-bottom: 1.5rem;
-  border-left: 4px solid var(--accent);
-  padding-left: 10px;
-}
-
-.resume-column ul {
-  list-style: none;
-  padding-left: 0;
 }
 
 .resume-column li {
-  position: relative;
   background: var(--card);
   border-left: 2px solid #3e4c5a;
   padding: 1rem 1.5rem;
@@ -310,36 +318,6 @@ body {
 .resume-column li:hover {
   border-left-color: var(--accent);
   transform: translateX(5px);
-}
-
-.resume-column li::before {
-  content: "";
-  position: absolute;
-  left: -9px;
-  top: 15px;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
-  background: var(--accent);
-  border: 2px solid var(--card);
-}
-
-.resume-column li h5 {
-  font-size: 1.1rem;
-  margin-top: 0;
-  margin-bottom: 0.5rem;
-  color: var(--text);
-}
-
-.resume-column li p strong {
-  display: inline-block;
-  background: var(--accent-light);
-  color: white;
-  padding: 0.2rem 0.6rem;
-  margin-bottom: 0.5rem;
-  border-radius: 5px;
-  font-weight: 500;
-  font-size: 0.9rem;
 }
 
 /* ================== Resume Download Button ================== */
@@ -357,27 +335,18 @@ body {
   padding: 1rem 2.5rem;
   border-radius: 12px;
   text-decoration: none;
-  letter-spacing: 0.5px;
-  box-shadow: 0 4px 20px rgba(0, 123, 255, 0.3);
   transition: all 0.3s ease;
 }
 
 .resume-download a:hover {
   transform: translateY(-4px);
-  box-shadow: 0 6px 25px rgba(0, 123, 255, 0.5);
-  background: linear-gradient(90deg, #0056b3, #007bff);
 }
-
-.resume-download a:active {
-  transform: scale(0.97);
-}
-
 
 /* ================== Contact ================== */
 .contact-links {
   max-width: 600px;
   margin: 0 auto;
-  padding: 2.5rem;
+  padding: 2rem;
   background: var(--card);
   border-radius: 15px;
   box-shadow: var(--shadow);
@@ -390,31 +359,29 @@ body {
 .contact-btn {
   padding: 1rem 2rem;
   font-size: 1.1rem;
-  min-width: 250px;
-  text-align: center;
   background: var(--accent-gradient);
   color: #fff;
-  border: none;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
-  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
   transition: transform 0.2s, box-shadow 0.3s;
 }
 
 .contact-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 123, 255, 0.4);
 }
 
-@media (max-width: 650px) {
-  .contact-links {
-    flex-direction: column;
-    gap: 15px;
-  }
-  .contact-btn {
-    min-width: auto;
-  }
+/* ================== Footer ================== */
+.site-footer {
+  padding: 2rem 0;
+  text-align: center;
+  border-top: 1px solid #2e3b4e;
+  background: #111827;
+}
+
+.site-footer p {
+  margin: 0;
+  opacity: 0.7;
 }
 
 /* ================== Back to Top Button ================== */
@@ -425,7 +392,6 @@ body {
   background: var(--accent-gradient);
   color: #fff;
   border: none;
-  outline: none;
   width: 55px;
   height: 55px;
   border-radius: 50%;
@@ -443,50 +409,86 @@ body {
   visibility: visible;
 }
 
-#backToTop:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0, 123, 255, 0.5);
-}
-
-/* ================== Footer ================== */
-.site-footer {
-  padding: 2rem 0;
-  text-align: center;
-  border-top: 1px solid #2e3b4e;
-  background: #111827;
-}
-
-.site-footer p {
-  margin: 0;
-  opacity: 0.7;
-}
-
-/* ================== Media Queries ================== */
-@media (max-width: 992px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 5rem;
-    height: auto;
-  }
-
+/* ================== Responsive Design ================== */
+@media (max-width: 1024px) {
   .hero-text h2 {
     font-size: 3rem;
   }
-
-  .hero-image {
-    margin-top: 2rem;
+  .resume-grid {
+    grid-template-columns: 1fr;
   }
+}
 
+@media (max-width: 768px) {
   .nav {
     display: none;
   }
 
-  .site-header .container {
-    justify-content: space-around;
+  .hero {
+    text-align: center;
   }
 
-  .resume-grid {
+  .hero-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .hero-image img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-desc {
+    font-size: 1rem;
+  }
+
+  .skills-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .hero-text h2 {
+    font-size: 2.3rem;
+  }
+
+  .hero-text p {
+    font-size: 1.1rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+  }
+
+  .biography {
+    padding: 3rem 1rem;
+  }
+
+  .biography .bio-container {
+    padding: 2rem 1.5rem;
+  }
+
+  .bio-list li {
+    font-size: 1rem;
+    padding: 0.8rem;
+  }
+
+  .resume-download a {
+    font-size: 1rem;
+    padding: 0.8rem 2rem;
+  }
+
+  #backToTop {
+    width: 45px;
+    height: 45px;
+    font-size: 1.2rem;
   }
 }
