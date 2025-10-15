@@ -39,14 +39,13 @@ function App() {
       <section className="hero">
         <div className="container hero-content">
           <div className="hero-text">
-            <h2>I'm <span className="highlight">Nathaniel Miguel David</span></h2>
+            <h2>
+              I'm <span className="highlight">Nathaniel Miguel David</span>
+            </h2>
             <p>A passionate Software Quality Assurance from the Philippines</p>
           </div>
           <div className="hero-image">
-            <img
-              src="/public/profile.png"
-              alt="Profile"
-            />
+            <img src="/profile.png" alt="Profile" />
           </div>
         </div>
       </section>
@@ -80,7 +79,7 @@ function App() {
         <div className="container">
           <h3 className="section-title">Skills</h3>
           <div className="skills-grid">
-            {[ 
+            {[
               { name: "Manual Testing", level: "40%" },
               { name: "Test Case Creation", level: "40%" },
               { name: "Adaptability and Flexibility", level: "60%" },
@@ -134,7 +133,9 @@ function App() {
           </div>
 
           <div className="resume-download">
-            <a href="/public/resume.pdf" className="btn" download>📄 Download Resume</a>
+            <a href="/resume.pdf" className="btn" download>
+              📄 Download Resume
+            </a>
           </div>
         </div>
       </section>
@@ -150,6 +151,7 @@ function App() {
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=nathanielmiguelcastrodavid@gmail.com"
               target="_blank"
+              rel="noopener noreferrer"
               className="btn contact-btn"
             >
               📧 Email Me
