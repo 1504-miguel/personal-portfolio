@@ -44,7 +44,7 @@ function App() {
           </div>
           <div className="hero-image">
             <img
-              src="/src/assets/profile.png"
+              src="/public/profile.png"
               alt="Profile"
             />
           </div>
@@ -134,7 +134,7 @@ function App() {
           </div>
 
           <div className="resume-download">
-            <a href="/src/assets/resume.pdf" className="btn" download>📄 Download Resume</a>
+            <a href="/public/resume.pdf" className="btn" download>📄 Download Resume</a>
           </div>
         </div>
       </section>
