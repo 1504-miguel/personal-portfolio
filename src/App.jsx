@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-// ✅ Import files from public folder using import.meta.url
-const profileImg = new URL("/profile.png", import.meta.url).href;
-const resumePDF = new URL("/resume.pdf", import.meta.url).href;
-
 function App() {
   useEffect(() => {
     const backToTopButton = document.getElementById("backToTop");
@@ -43,13 +39,14 @@ function App() {
       <section className="hero">
         <div className="container hero-content">
           <div className="hero-text">
-            <h2>
-              I'm <span className="highlight">Nathaniel Miguel David</span>
-            </h2>
+            <h2>I'm <span className="highlight">Nathaniel Miguel David</span></h2>
             <p>A passionate Software Quality Assurance from the Philippines</p>
           </div>
           <div className="hero-image">
-            <img src={profileImg} alt="Profile" />
+            <img
+              src="/public/profile.png"
+              alt="Profile"
+            />
           </div>
         </div>
       </section>
@@ -83,7 +80,7 @@ function App() {
         <div className="container">
           <h3 className="section-title">Skills</h3>
           <div className="skills-grid">
-            {[
+            {[ 
               { name: "Manual Testing", level: "40%" },
               { name: "Test Case Creation", level: "40%" },
               { name: "Adaptability and Flexibility", level: "60%" },
@@ -113,9 +110,7 @@ function App() {
                 <li>
                   <h5>Bachelor of Science in Information System</h5>
                   <p><strong>La Verdad Christian College</strong> — 2023 - 2025</p>
-                  <p>
-                    Bachelor of Science in Information System (BSIS) is a college program that focuses on using technology to solve business problems. It teaches students how to design, manage, and improve information systems that help organizations work more efficiently.
-                  </p>
+                  <p>Bachelor of Science in Information System (BSIS) is a college program that focuses on using technology to solve business problems. It teaches students how to design, manage, and improve information systems that help organizations work more efficiently.</p>
                 </li>
                 <li>
                   <h5>Senior High School (General Academic Strand)</h5>
@@ -132,18 +127,14 @@ function App() {
                 <li>
                   <h5>Bazar Seller</h5>
                   <p><strong>Lhai's Bazar</strong> — Dec 2018 - Nov 2019</p>
-                  <p>
-                    Operated cash register, handled payments, and maintained a clean and organized checkout area. Collaborated with team members to provide excellent customer service and meet sales goals.
-                  </p>
+                  <p>Operated cash register, handled payments, and maintained a clean and organized checkout area. Collaborated with team members to provide excellent customer service and meet sales goals.</p>
                 </li>
               </ul>
             </div>
           </div>
 
           <div className="resume-download">
-            <a href={resumePDF} className="btn" download>
-              📄 Download Resume
-            </a>
+            <a href="/public/resume.pdf" className="btn" download>📄 Download Resume</a>
           </div>
         </div>
       </section>
@@ -159,7 +150,6 @@ function App() {
             <a
               href="https://mail.google.com/mail/?view=cm&fs=1&to=nathanielmiguelcastrodavid@gmail.com"
               target="_blank"
-              rel="noopener noreferrer"
               className="btn contact-btn"
             >
               📧 Email Me
